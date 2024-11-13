@@ -5,6 +5,11 @@ on:
     branches:
       - 'main'
 
+# 添加这个权限配置
+permissions:
+  contents: write  # 这给予了写入仓库内容的权限
+  pull-requests: write  # 如果需要创建 PR 的话
+
 env:
   DOCKERHUB_USERNAME: morningeatdinner
 

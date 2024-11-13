@@ -1,0 +1,42 @@
+name: "web_app"
+mode: "dev"
+port: 9000
+version: "v0.0.1"
+machine_id: 1
+start_time: "2020-07-01"
+auth:
+  jwt_expire: 8760
+
+log:
+  level: "debug"
+  filename: "web_app.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+mysql:
+  host: "mysql.sqlpub.com"
+  port: 3306
+  user: "xiaorui"
+  password: "a63cbe58ab65cc40"
+  dbname: "forum_test"
+  max_open_conns: 200
+  max_idle_conns: 50
+redis:
+  host: "127.0.0.1"
+  port: 6379
+  db: 0
+  pool_size: 100
+sms:
+  access_key_id: "LTAI5tPwvMk5i8awJ8FYVFnaasdasdasdasdasdas"
+  access_key_secret: "CwkyEXufERWUchvB3yRG1G6I2LYiasdasdasdnt"
+  sign_name: "阿里云短信测试"
+  template_code: "SMS_154950909"
+email:
+  smtp:
+    host: "redis-19049.c302.asia-northeast1-1.gce.redns.redis-cloud.com"
+    port: 19049
+    username: "default"
+    password: "UOEqSXG8uDnrJ7XvQ4rY03hdGLV7kala"
+  from:
+    address:  "webapp@example.com"
+    name: "webapp"

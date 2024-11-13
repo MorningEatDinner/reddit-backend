@@ -41,5 +41,5 @@ jobs:
           message: 'Update Image Version to ${{ steps.vars.outputs.sha_short }}'
           changes: |
             {
-              "deploy.tag": "${{ steps.vars.outputs.sha_short }}",
+              "deploy.tag": "${{ steps.vars.outputs.sha_short }}"
             }

@@ -32,3 +32,14 @@ jobs:
           context: .
           push: true
           tags: ${{ env.DOCKERHUB_USERNAME }}/reddit-backend:${{ steps.vars.outputs.sha_short }}
+      - name: Update helm values.yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'helm/values.yaml'
+          commitChange: true
+          branch: main
+          message: 'Update Image Version to ${{ steps.vars.outputs.sha_short }}'
+          changes: |
+            {
+              "deploy.tag": "${{ steps.vars.outputs.sha_short }}",
+            }

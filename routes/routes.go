@@ -20,7 +20,9 @@ func Setup(mode string) *gin.Engine {
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 	// r.Use(middlewares.RateLimitMiddleware(time.Second*2, 10)) // 2s新增1个令牌， 容量为10
 	r.GET("/swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
-
+	r.GET("test", func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, "CD测试成功")
+	})
 	v1 := r.Group("/api/v1")
 	{
 		// 创建验证相关的路由组

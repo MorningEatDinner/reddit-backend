@@ -32,6 +32,6 @@ COPY --from=builder /build/bluebell /
 
 RUN set -eux \
     && apt-get update \
-    && apt-get install -y --no-install-recommends netcat
+    && apt-get install -y --no-install-recommends  netcat-openbsd
 
 ENTRYPOINT ["/bluebell"]

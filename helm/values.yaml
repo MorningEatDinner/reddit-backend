@@ -1,0 +1,3 @@
+deploy:
+  image: morningeatdinner/reddit-backend
+  tag: 420dfdf

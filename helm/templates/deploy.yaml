@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reddit-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: reddit-backend
+  template:
+    metadata:
+      labels:
+        app: reddit-backend
+    spec:
+      containers:
+      - name: reddit-backend
+        image: "{{ .Values.deploy.image}}:{{.Values.deploy.tag}}" # 替换为你的镜像名称和版本
+        ports:
+        - containerPort: 9000         # 替换为你的应用程序端口

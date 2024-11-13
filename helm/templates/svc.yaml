@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reddit-backend-service
+spec:
+  selector:
+    app: reddit-backend                   # 与 Deployment 中的 app 标签一致
+  type: NodePort                      # 可以用 NodePort 或 ClusterIP，根据需求更改
+  ports:
+    - protocol: TCP
+      port: 9000                           # Service 暴露的端口
+      targetPort: 9000                     # 应用程序容器的端口（与 containerPort 一致）
